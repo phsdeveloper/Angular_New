@@ -1,0 +1,8 @@
+Seção 4: [Angular] - Componentes
+Aula 14: Entendendo o componente.
+
+Nessa aula foi explicado para que cada arquivo e pasta serve, assim como a implementação de uma otimização do código para diminuir a quantidade de arquivos necessários para iniciar a aplicação  .
+Foi deletado os arquivos: 
+ - app.component.html
+ - app.component.scss
+ - app.component.spec.ts
