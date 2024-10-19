@@ -1,16 +1,24 @@
 import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { NewComponent } from './components/new-component/new-component.component';
-import { TemplateBindingComponent } from './components/template/template-binding/template-binding.component';
+import { Secao06TemplateComponent } from './components/SecoesAula/secao-06-template/secao-06-template.component';
 
 @Component({
   selector: 'app-root',
-  standalone: true, 
-  imports: [RouterOutlet,NewComponent,TemplateBindingComponent],
+  standalone: true,
+  imports: [RouterOutlet, Secao06TemplateComponent],
   template: `
   <!--<router-outlet /> -->
-  <app-new-component/>
-  <app-template-binding />
+  <div class="container-fluid">
+    <br/>
+    <h2>Udemy Curso de Angular 2 (v17+) Typescript do Básico ao Avançado</h2>
+    <br/>
+  <div class="accordion" id="accordionExample">
+    <app-secao-06-template/>
+  </div>
+    
+    
+  </div>
 
   `
 })
