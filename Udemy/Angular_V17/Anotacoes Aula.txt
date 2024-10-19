@@ -1,5 +1,5 @@
-Seção 5: [ Angular ] - Estilos css
-18. Introdução
+Seção 6: [Angular] - Template
+22. Text Interpolation
 
-Nessa aula foi feito a introdução aos componentes estilos CSS e como utilizar eles e sua hierarquia	de funcionamento.
-Depois fazer mais testes e anotações sobre isso.
+Nessa aula foi apresentado uma forma de obter dados do "Back-end" do angular que vem do arquivo .ts, utilizando o Text Interpolation que nada mais é que colocar o que você precisa entre {{ dados }} 
+Ele serve para tudo, mas tem que fazer com bom senso.
