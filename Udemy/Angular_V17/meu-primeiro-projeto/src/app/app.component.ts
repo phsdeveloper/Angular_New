@@ -6,17 +6,17 @@ import { Secao06TemplateComponent } from './components/SecoesAula/secao-06-templ
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet, Secao06TemplateComponent],
+  imports: [RouterOutlet, Secao06TemplateComponent,NewComponent],
   template: `
   <!--<router-outlet /> -->
   <div class="container-fluid">
     <br/>
     <h2>Udemy Curso de Angular 2 (v17+) Typescript do Básico ao Avançado</h2>
     <br/>
-  <div class="accordion" id="accordionExample">
-    <app-secao-06-template/>
-  </div>
-    
+    <div class="accordion" id="accordionAulas">
+      <app-secao-06-template/>
+    </div>
+    <app-new-component/>
     
   </div>
 
