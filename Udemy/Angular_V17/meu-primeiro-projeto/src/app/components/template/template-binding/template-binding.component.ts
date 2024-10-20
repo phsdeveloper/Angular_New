@@ -32,5 +32,12 @@ constructor(){
   public imgAlt = 'Property binding IMG ALT';
   public imgTitle = 'Property binding IMG Title';
 
+  /**************************************************************************************************************************
+   *                                        23. Property binding                                                            *
+  ***************************************************************************************************************************/
+
+public descricaoAula24='O Attribute binding é bem similar ao Property binding, apenas a sintaxe que é diferente <element [attr.attribute-you-are-targeting]="value"> </element>';
+public Aula24_ArialLabel = 'Aula 24 Arial label';
+public Aula24_Title = 'Aula 24 Title';
 
 }
