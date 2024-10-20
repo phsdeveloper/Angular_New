@@ -1,13 +1,13 @@
-
 <div class="mt-2">
     <div class="card">
         <div class="card-header text-center">
             <strong> 22. Text Interpolation</strong>
         </div>
         <div class="card-body">
+            <h5 class="card-title">Text Interpolation </h5>
             <p>{{descricao}}</p>
             
-            <h5 class="card-title">Possibilidades </h5>
+            <h6 class="card-title">Possibilidades </h6>
             <ul>
                 <li>
                     Trazendo dados: {{name}} {{age}} anos
@@ -16,9 +16,11 @@
                     Fazendo conta: 10 + 2 = <strong>{{10 + 2}}</strong>
                 </li>
                 <li>
-                    Operador Ternario = <strong>{{age < 18? 'Menor de idade': 'Maior de idade'}}</strong>
+                    Operador Ternario = <strong>{{age < 18? 'Menor de idade' : 'Maior de idade' }}</strong>
                 </li>
             </ul>
+            
+
             <p class="card-text"> </p>
         </div>
         <div class="card-footer">
@@ -28,4 +30,22 @@
 </div>
 
 
+<div class="mt-2">
+    <div class="card">
+        <div class="card-header text-center">
+            <strong> 23. Property binding</strong>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Property binding </h5>
+            <p>{{descricao2}}</p>
+            <button [disabled]="isDisabled" class="btn btn-primary">Botão Property binding ({{isDisabled?"Desabilitado":"Habilitado"}})</button>
+            <br/>
+            <p> Property binding na imagem <img [src]="srcValue" [alt]="imgAlt" [title]="imgTitle" /></p>
 
+            <p class="card-text"> </p>
+        </div>
+        <div class="card-footer">
+            <p>Caminho componente: <strong>{{CaminhoComponente}}</strong></p>
+        </div>
+    </div>
+</div>
