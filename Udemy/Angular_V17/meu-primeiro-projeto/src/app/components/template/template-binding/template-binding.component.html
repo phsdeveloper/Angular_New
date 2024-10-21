@@ -6,7 +6,7 @@
         <div class="card-body">
             <h5 class="card-title">Text Interpolation </h5>
             <p>{{descricao}}</p>
-            
+
             <h6 class="card-title">Possibilidades </h6>
             <ul>
                 <li>
@@ -19,7 +19,7 @@
                     Operador Ternario = <strong>{{age < 18? 'Menor de idade' : 'Maior de idade' }}</strong>
                 </li>
             </ul>
-            
+
 
             <p class="card-text"> </p>
         </div>
@@ -38,8 +38,9 @@
         <div class="card-body">
             <h5 class="card-title">Property binding </h5>
             <p>{{descricao2}}</p>
-            <button [disabled]="isDisabled" class="btn btn-primary">Botão Property binding ({{isDisabled?"Desabilitado":"Habilitado"}})</button>
-            <br/>
+            <button [disabled]="isDisabled" class="btn btn-primary">Botão Property binding
+                ({{isDisabled?"Desabilitado":"Habilitado"}})</button>
+            <br />
             <p> Property binding na imagem <img [src]="srcValue" [alt]="imgAlt" [title]="imgTitle" /></p>
 
             <p class="card-text"> </p>
@@ -59,9 +60,34 @@
         <div class="card-body">
             <h5 class="card-title">Attribute binding </h5>
             <p>{{descricaoAula24}}</p>
-            <p [attr.aria-label]="Aula24_ArialLabel" [attr.title] = "Aula24_Title">{{Aula24_ArialLabel}}</p>
-            <br/>
-           
+            <p [attr.aria-label]="Aula24_ArialLabel" [attr.title]="Aula24_Title">{{Aula24_ArialLabel}}</p>
+            <br />
+
+
+            <p class="card-text"> </p>
+        </div>
+        <div class="card-footer">
+            <p>Caminho componente: <strong>{{CaminhoComponente}}</strong></p>
+        </div>
+    </div>
+</div>
+
+<div class="mt-2">
+    <div class="card">
+        <div class="card-header text-center">
+            <strong> 25. Class and Style binding </strong>
+        </div>
+        <div class="card-body">
+            <h5 class="card-title">Class and Style binding </h5>
+            <p>{{descricaoAula25}}</p>
+            <p [class.background-red]="age < 18" [class.background-green]="age >= 18">
+                Adicionando classe condicionalmente com a sintaxe <br/>[class.background-red]="age < 18" <br/>[class.background-green]="age >= 18"
+            </p>
+            <br />
+
+
+            <p [style.text-decoration] = "isTextDecoration">{{age}} >> style adicionado via arquivo ts</p>
+
 
             <p class="card-text"> </p>
         </div>

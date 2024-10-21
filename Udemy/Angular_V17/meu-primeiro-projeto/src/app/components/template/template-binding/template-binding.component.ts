@@ -40,4 +40,17 @@ public descricaoAula24='O Attribute binding é bem similar ao Property binding, 
 public Aula24_ArialLabel = 'Aula 24 Arial label';
 public Aula24_Title = 'Aula 24 Title';
 
+
+  /**************************************************************************************************************************
+   *                                        25. Class and Style binding                                                     *
+  ***************************************************************************************************************************/
+  
+  public descricaoAula25='É possivel controlar as classes a partir de alterações no arquivo ts do componente, aumentando assim a reatividade da aplicação'
+                        + ' seguindo a seguinte sintaxe: [class.background-red] = "valor booleano".'
+                        + 'Agora a parte dos estilos segue quase o mesmo esquema, mas muda apenas que é possivel passar um texto de estilo ao invés de um valor booleno.'
+
+  ;
+
+  public isTextDecoration = this.age <=18? 'underline': 'none';
+
 }
