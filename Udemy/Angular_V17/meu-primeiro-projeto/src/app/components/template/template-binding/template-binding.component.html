@@ -1,98 +1,184 @@
-<div class="mt-2">
-    <div class="card">
-        <div class="card-header text-center">
-            <strong> 22. Text Interpolation</strong>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Text Interpolation </h5>
-            <p>{{descricao}}</p>
-
-            <h6 class="card-title">Possibilidades </h6>
-            <ul>
-                <li>
-                    Trazendo dados: {{name}} {{age}} anos
-                </li>
-                <li>
-                    Fazendo conta: 10 + 2 = <strong>{{10 + 2}}</strong>
-                </li>
-                <li>
-                    Operador Ternario = <strong>{{age < 18? 'Menor de idade' : 'Maior de idade' }}</strong>
-                </li>
-            </ul>
 
 
-            <p class="card-text"> </p>
-        </div>
-        <div class="card-footer">
-            <p>Caminho componente: <strong>{{CaminhoComponente}}</strong></p>
-        </div>
-    </div>
-</div>
+
+<div class="accordion" id="Secao06_aulas">
+
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="Secao06_aula_22_item">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#Secao06_aula_22_Body" aria-expanded="false" aria-controls="Secao06_aula_22_Body">
+                Aula 22. Text Interpolation
+            </button>
+        </h2>
+        <div id="Secao06_aula_22_Body" class="accordion-collapse collapse" aria-labelledby="Secao06_aula_22_item"
+            data-bs-parent="#Secao06_aulas">
+            <div class="accordion-body">
+                
+                <div class="mt-2">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <strong> 22. Text Interpolation</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Text Interpolation </h5>
+                            <p>{{descricao}}</p>
+
+                            <h6 class="card-title">Possibilidades </h6>
+                            <ul>
+                                <li>
+                                    Trazendo dados: {{name}} {{age}} anos
+                                </li>
+                                <li>
+                                    Fazendo conta: 10 + 2 = <strong>{{10 + 2}}</strong>
+                                </li>
+                                <li>
+                                    Operador Ternario = <strong>{{age < 18? 'Menor de idade' : 'Maior de idade'
+                                            }}</strong>
+                                </li>
+                            </ul>
 
 
-<div class="mt-2">
-    <div class="card">
-        <div class="card-header text-center">
-            <strong> 23. Property binding</strong>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Property binding </h5>
-            <p>{{descricao2}}</p>
-            <button [disabled]="isDisabled" class="btn btn-primary">Botão Property binding
-                ({{isDisabled?"Desabilitado":"Habilitado"}})</button>
-            <br />
-            <p> Property binding na imagem <img [src]="srcValue" [alt]="imgAlt" [title]="imgTitle" /></p>
+                            <p class="card-text"> </p>
+                        </div>
+                        <div class="card-footer">
+                            <p>Caminho componente: <strong>{{CaminhoComponente}}</strong></p>
+                        </div>
+                    </div>
+                </div>
+               
 
-            <p class="card-text"> </p>
-        </div>
-        <div class="card-footer">
-            <p>Caminho componente: <strong>{{CaminhoComponente}}</strong></p>
-        </div>
-    </div>
-</div>
-
-
-<div class="mt-2">
-    <div class="card">
-        <div class="card-header text-center">
-            <strong> 24. Attribute binding </strong>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Attribute binding </h5>
-            <p>{{descricaoAula24}}</p>
-            <p [attr.aria-label]="Aula24_ArialLabel" [attr.title]="Aula24_Title">{{Aula24_ArialLabel}}</p>
-            <br />
-
-
-            <p class="card-text"> </p>
-        </div>
-        <div class="card-footer">
-            <p>Caminho componente: <strong>{{CaminhoComponente}}</strong></p>
+            </div>
         </div>
     </div>
-</div>
-
-<div class="mt-2">
-    <div class="card">
-        <div class="card-header text-center">
-            <strong> 25. Class and Style binding </strong>
-        </div>
-        <div class="card-body">
-            <h5 class="card-title">Class and Style binding </h5>
-            <p>{{descricaoAula25}}</p>
-            <p [class.background-red]="age < 18" [class.background-green]="age >= 18">
-                Adicionando classe condicionalmente com a sintaxe <br/>[class.background-red]="age < 18" <br/>[class.background-green]="age >= 18"
-            </p>
-            <br />
 
 
-            <p [style.text-decoration] = "isTextDecoration">{{age}} >> style adicionado via arquivo ts</p>
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="Secao06_aula_23_item">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#Secao06_aula_23_Body" aria-expanded="false" aria-controls="Secao06_aula_23_Body">
+                Aula 23. Text Interpolation
+            </button>
+        </h2>
+        <div id="Secao06_aula_23_Body" class="accordion-collapse collapse" aria-labelledby="Secao06_aula_23_item"
+            data-bs-parent="#Secao06_aulas">
+            <div class="accordion-body">
+               
+                <div class="mt-2">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <strong> 23. Property binding</strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Property binding </h5>
+                            <p>{{descricao2}}</p>
+                            <button [disabled]="isDisabled" class="btn btn-primary">Botão Property binding
+                                ({{isDisabled?"Desabilitado":"Habilitado"}})</button>
+                            <br />
+                            <p> Property binding na imagem <img [src]="srcValue" [alt]="imgAlt" [title]="imgTitle" />
+                            </p>
+
+                            <p class="card-text"> </p>
+                        </div>
+                        <div class="card-footer">
+                            <p>Caminho componente: <strong>{{CaminhoComponente}}</strong></p>
+                        </div>
+                    </div>
+                </div>
 
 
-            <p class="card-text"> </p>
-        </div>
-        <div class="card-footer">
-            <p>Caminho componente: <strong>{{CaminhoComponente}}</strong></p>
+
+              
+
+
+
+
+            </div>
         </div>
     </div>
+
+
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="Secao06_aula_24_item">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#Secao06_aula_24_Body" aria-expanded="true" aria-controls="Secao06_aula_24_Body">
+                25. Class and Style binding
+            </button>
+        </h2>
+        <div id="Secao06_aula_24_Body" class="accordion-collapse collapse show" aria-labelledby="Secao06_aula_24_item"
+            data-bs-parent="#Secao06_aulas">
+            <div class="accordion-body">
+                
+                <div class="mt-2">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <strong> 25. Class and Style binding </strong>
+                        </div>
+                        <div class="card-body">
+                            <h5 class="card-title">Class and Style binding </h5>
+                            <p>{{descricaoAula25}}</p>
+                            <p [class.background-red]="age < 18" [class.background-green]="age >= 18">
+                                Adicionando classe condicionalmente com a sintaxe <br />[class.background-red]="age< 18" <br />[class.background-green]="age >= 18"
+                            </p>
+                            <br />
+
+
+                            <p [style.text-decoration]="isTextDecoration">{{age}} >> style adicionado via arquivo ts</p>
+
+
+                            <p class="card-text"> </p>
+                        </div>
+                        <div class="card-footer">
+                            <p>Caminho componente: <strong>{{CaminhoComponente}}</strong></p>
+                        </div>
+                    </div>
+                </div>
+               
+            </div>
+        </div>
+    </div>
+
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="Secao06_aula_25_item">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+                data-bs-target="#Secao06_aula_25_Body" aria-expanded="false" aria-controls="Secao06_aula_25_Body">
+                Aula 25
+            </button>
+        </h2>
+        <div id="Secao06_aula_25_Body" class="accordion-collapse collapse" aria-labelledby="Secao06_aula_25_item"
+            data-bs-parent="#Secao06_aulas">
+            <div class="accordion-body">
+               
+                <p>teste</p>
+
+
+            </div>
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+
+<!--
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="Secao06_aula_XX_item">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#Secao06_aula_XX_Body" aria-expanded="true" aria-controls="Secao06_aula_XX_Body">
+                xxxxxxx
+            </button>
+        </h2>
+        <div id="Secao06_aula_XX_Body" class="accordion-collapse collapse show" aria-labelledby="Secao06_aula_XX_item"
+            data-bs-parent="#Secao06_aulas">
+            <div class="accordion-body">
+              
+            </div>
+        </div>
+    </div>
+
+-->
+
 </div>
