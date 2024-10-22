@@ -1,9 +1,10 @@
 import { Component } from '@angular/core';
+import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-template-binding',
   standalone: true,
-  imports: [],
+  imports: [FormsModule],
   templateUrl: './template-binding.component.html',
   styleUrl: './template-binding.component.scss'
 })
@@ -93,5 +94,16 @@ export class TemplateBindingComponent {
     this.Aula26_TextoOnMouseEvent = `ClientX: ${event.clientX} | ClientY: ${event.clientY} | ${TextoOneKeyDown}`;
     return console.log(event);
   }
+
+/**************************************************************************************************************************
+   *                                        27. Two-way binding                                                            *
+  ***************************************************************************************************************************/
+
+ public Aula27_Descricao = 'Nessa aula foi demonstrado uma das formas de obter os dados do html (Front-end) e passar para o TS (Back end)'
+                           + ' , e para que essa comunicação sejá possível foi necessário adicionar no input HTML a seguinte notação: '
+                           + ' [(ngModel)]="name" e no arquivo TS foi necessário realizar o import do FormsModule. E consequentemente os dado no HTML são alterados'
+                           + ' ao mesmo tempo na tela.'
+                           ;
+ 
 
 }
