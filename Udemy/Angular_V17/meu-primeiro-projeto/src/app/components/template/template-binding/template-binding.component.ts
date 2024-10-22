@@ -9,9 +9,9 @@ import { Component } from '@angular/core';
 })
 export class TemplateBindingComponent {
 
-constructor(){
-  
-}
+  constructor() {
+
+  }
 
   public CaminhoComponente = 'src/app/components/template/template-binding'
 
@@ -36,21 +36,62 @@ constructor(){
    *                                        23. Property binding                                                            *
   ***************************************************************************************************************************/
 
-public descricaoAula24='O Attribute binding é bem similar ao Property binding, apenas a sintaxe que é diferente <element [attr.attribute-you-are-targeting]="value"> </element>';
-public Aula24_ArialLabel = 'Aula 24 Arial label';
-public Aula24_Title = 'Aula 24 Title';
+  public descricaoAula24 = 'O Attribute binding é bem similar ao Property binding, apenas a sintaxe que é diferente <element [attr.attribute-you-are-targeting]="value"> </element>';
+  public Aula24_ArialLabel = 'Aula 24 Arial label';
+  public Aula24_Title = 'Aula 24 Title';
 
 
   /**************************************************************************************************************************
    *                                        25. Class and Style binding                                                     *
   ***************************************************************************************************************************/
-  
-  public descricaoAula25='É possivel controlar as classes a partir de alterações no arquivo ts do componente, aumentando assim a reatividade da aplicação'
-                        + ' seguindo a seguinte sintaxe: [class.background-red] = "valor booleano".'
-                        + 'Agora a parte dos estilos segue quase o mesmo esquema, mas muda apenas que é possivel passar um texto de estilo ao invés de um valor booleno.'
 
-  ;
+  public descricaoAula25 = 'É possivel controlar as classes a partir de alterações no arquivo ts do componente, aumentando assim a reatividade da aplicação'
+    + ' seguindo a seguinte sintaxe: [class.background-red] = "valor booleano".'
+    + 'Agora a parte dos estilos segue quase o mesmo esquema, mas muda apenas que é possivel passar um texto de estilo ao invés de um valor booleno.'
 
-  public isTextDecoration = this.age <=18? 'underline': 'none';
+    ;
+
+  public isTextDecoration = this.age <= 18 ? 'underline' : 'none';
+
+
+  /**************************************************************************************************************************
+   *                                        26. Event binding                                                               *
+  ***************************************************************************************************************************/
+
+  public descricaoAula26 = 'O Event binding é uma opcão que nos permite chamar Functions do arquivo .ts apartir de eventos.'
+    + ' Nesse exemplo foi utilizado o click do button com a seguinte sintaxe: (click) = "FUN_IncrementAge()"';
+
+    public Aula26_TextoOneKeyDown = '';
+    public Aula26_TextoOnMouseEvent = '';
+
+
+  public FUN_IncrementAge() {
+    this.age++;
+  }
+
+  public FUN_DecrementAge() {
+    if (this.age > 0)
+      this.age--;
+  }
+
+  public FUN_Aula26_OnekeyDown(event: Event) {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    this.Aula26_TextoOneKeyDown = 'tecla SHIFT + T foi pressionada em: ' + h + ':' + m + ':' + s;
+    return console.log(event);
+  }
+
+  public FUN_Aula26_OnMouseMove(event: MouseEvent)
+  {
+    var today = new Date();
+    var h = today.getHours();
+    var m = today.getMinutes();
+    var s = today.getSeconds();
+    var TextoOneKeyDown = 'Posição alterada em: ' + h + ':' + m + ':' + s;
+    this.Aula26_TextoOnMouseEvent = `ClientX: ${event.clientX} | ClientY: ${event.clientY} | ${TextoOneKeyDown}`;
+    return console.log(event);
+  }
 
 }
