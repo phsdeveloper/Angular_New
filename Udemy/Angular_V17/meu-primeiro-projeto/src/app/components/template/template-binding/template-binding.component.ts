@@ -1,10 +1,14 @@
+import { CommonModule, NgClass } from '@angular/common';
 import { Component } from '@angular/core';
 import { FormsModule } from '@angular/forms';
 
 @Component({
   selector: 'app-template-binding',
   standalone: true,
-  imports: [FormsModule],
+  imports: [FormsModule,
+    CommonModule, //No angular antigo tempo que importar tudo, pois o NgClass está dentro de CommonModule
+    NgClass //No angular novo podemos usar apenas o item que vamos precisar
+  ],
   templateUrl: './template-binding.component.html',
   styleUrl: './template-binding.component.scss'
 })
@@ -95,15 +99,24 @@ export class TemplateBindingComponent {
     return console.log(event);
   }
 
-/**************************************************************************************************************************
+/***************************************************************************************************************************
    *                                        27. Two-way binding                                                            *
-  ***************************************************************************************************************************/
+  **************************************************************************************************************************/
 
  public Aula27_Descricao = 'Nessa aula foi demonstrado uma das formas de obter os dados do html (Front-end) e passar para o TS (Back end)'
                            + ' , e para que essa comunicação sejá possível foi necessário adicionar no input HTML a seguinte notação: '
                            + ' [(ngModel)]="name" e no arquivo TS foi necessário realizar o import do FormsModule. E consequentemente os dado no HTML são alterados'
                            + ' ao mesmo tempo na tela.'
                            ;
- 
+ /***************************************************************************************************************************
+   *                                        28. NgClass e NgStyle                                                           *
+  **************************************************************************************************************************/
+ public Aula28_Descricao = 'Tanto o ngClass quanto o ngStyle nos permite atribuir classes com base em validações/regras que tenham como retorno um valor booleano'
+                           + '  para esse exemplo utilizei a verificação para saber se a idade informada é maior ou menor de 18 anos'
+                           + '' 
+                           + ' '
+                           ;
+
+public Aula28_Idade = 16;
 
 }
