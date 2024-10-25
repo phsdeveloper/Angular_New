@@ -16,7 +16,7 @@ import { Secao06TemplateComponent } from './components/SecoesAula/secao-06-templ
     <div class="accordion" id="accordionAulas">
       <app-secao-06-template/>
     </div>
-    <app-new-component/>
+   
     
   </div>
 

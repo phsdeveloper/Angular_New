@@ -1,0 +1,135 @@
+<div class="accordion-item">
+    <h2 class="accordion-header" id="Secao06_aula_29_item">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#Secao06_aula_29_Body"
+            aria-expanded="true" aria-controls="Secao06_aula_29_Body">
+            ★ 29. Template Variables
+        </button>
+    </h2>
+    <div id="Secao06_aula_29_Body" class="accordion-collapse collapse show" aria-labelledby="Secao06_aula_29_item"
+        data-bs-parent="#Secao06_aulas">
+        <div class="accordion-body">
+            <div class="mt-2">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <strong> 29. Template Variables</strong>
+                    </div>
+                    <div class="card-body">
+
+
+
+                        <!--<h5 class="card-title">xxxxxxxxxxxxx</h5>-->
+                        <p>Template Variables nos perimte acessar</p>
+                        <ul>
+                            <li>Obter dados dos atributos de um elemento HTML como por exemplo: Class, id, value, type, etc</li>
+                            <li>Obter dados de outro componente, mas do typeScript (pelo menos na aula foi mostrado apenas essa opção)</li>
+                        </ul>
+                        
+
+
+                        <p>Templete variables permite ter acesso a todas as propriedades de um elemento HTML como se estivessem vindo do type script <strong>&#123;&#123; &lt;elemento &gt; &#125; &#125; (Text Interpolation)</strong> 
+                            como os exemplos a seguir mas ele não é reativo, ou seja, só pode ser capturado quando a tela é carregada. A sintaxe para isso é 
+                            <strong>#Identificador</strong> onde o Identificador pode ser qualquer nome exceto quando .
+                        </p>
+                        <hr/>
+                        <h3>Obtendo dados de elementos HTML</h3>
+                        <p>Para obter os dados de um elemento HTML e acessá-lo via Text Interpolation é necessário seguir as seguintes etapas:</p>
+                        <ul>
+                            <li>Adicionar no elemento um <strong>#[Identificador]</strong> onde Identificador pode ser qualquer nome</li>
+                            <li> {{InputDescricao_02}}</li>
+                            <li> {{InputDescricao_03}}</li>
+                        </ul>
+
+
+                        <h6>Obtendo dados de um input</h6>
+                        <br/>
+                        <div class="input-group mb-3">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text" id="basic-addon1"><span class="input-group-text"
+                                        id="basic-addon1">
+                                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16"
+                                            fill="currentColor" class="bi bi-pen" viewBox="0 0 16 16">
+                                            <path
+                                                d="m13.498.795.149-.149a1.207 1.207 0 1 1 1.707 1.708l-.149.148a1.5 1.5 0 0 1-.059 2.059L4.854 14.854a.5.5 0 0 1-.233.131l-4 1a.5.5 0 0 1-.606-.606l1-4a.5.5 0 0 1 .131-.232l9.642-9.642a.5.5 0 0 0-.642.056L6.854 4.854a.5.5 0 1 1-.708-.708L9.44.854A1.5 1.5 0 0 1 11.5.796a1.5 1.5 0 0 1 1.998-.001m-.644.766a.5.5 0 0 0-.707 0L1.95 11.756l-.764 3.057 3.057-.764L14.44 3.854a.5.5 0 0 0 0-.708z">
+                                            </path>
+                                        </svg>
+                                    </span></span>
+                            </div>
+                            <input #name value="Paulo Santos (Input valiable)" type="text" class="form-control"
+                                placeholder="Exemplo template variable" aria-label="Exemplo template variable"
+                                aria-describedby="basic-addon1">
+                        </div>
+                        <div class="alert alert-dark" role="alert">
+                            <p>Dados do elemento input</p>
+                            <ul>
+                                <li><strong>Value:</strong> {{name.value}}</li>
+                                <li><strong>type: </strong>{{name.type}}</li>
+                                <li><strong>Class: </strong>{{name.className}}</li>
+                            </ul>
+                        </div>
+                      
+
+                        
+                        <h6 #h2 data-Codigo="codigo123"> Obtendo dados do elemento html h6</h6>
+
+                        <div class="alert alert-dark" role="alert">
+                            <p>Dados obtidos do elemento h2</p>
+                            <ul>
+                                <li><strong>InnerText:  </strong> {{h2.innerText}}</li>
+                                <li><strong>data-Codigo:</strong> {{h2.getAttribute('data-Codigo')}}</li>
+                            </ul>
+
+                        </div>
+
+                        <hr/>
+                        <!-----TEXT INTERPOLATION------------------------------------------------------------------------------------------------------------------------------------------------>
+                        <h5 class="card-title">Dados vindo o type Script via Text interpolation</h5>
+                        <p>É possível também acesssar os elementos pelo TypeScript seguindo as seguintes etapas</p>
+                        <ul>
+                            <li>Ter importado no TypeScript as bibliotecas <u>ElementRef</u> e <u>ViewChild</u> sintaxe: <mark>{{NewComponent_ImportText}}</mark></li>
+                            <li>Declarar a propriedade/variavel que irá ter acesso ao elemento HTML no TS <mark>{{DadosViaTS_Declaracao}}</mark></li>
+                            <li>implementar a Function <mark>{{DadosViaTS_Funcao}}</mark> e dentro da função acessar as propriedades do elemento como por exemplo <mark>{{DadosViaTS_GetDados}}</mark></li>
+
+                        </ul>
+
+
+
+                        <div class="alert alert-dark" role="alert">
+                            <p>Dados obtidos do elemento h6 (#h2)</p>
+                            <ul>
+                                <li><strong>InnerText:  </strong> {{h2_InnerText}}</li>
+                                <li><strong>data-Codigo:</strong> {{h2_DataCodigo}}</li>
+                            </ul>
+
+                            <p>Dados do elemento input (#name)</p>
+                            <ul>
+                                <li><strong>Value:</strong> {{name_Value}}</li>
+                                <li><strong>type: </strong>{{name_Type}}</li>
+                                <li><strong>Class: </strong>{{name_Class}}</li>
+                            </ul>
+
+                        </div>
+                        <!---------------------------------------------------------------------------------------------------------------------------------------------------------->
+                        <hr/>
+
+                        <h5 class="card-title">Dados vindo de outro componente como por exemplo o template-binding da aula anterior</h5>
+                        <p>Para que os dados sejam carregados de outro componente é necessário:</p>
+                        <ul>
+                            <li>Importar o componente no arquivo TypeScript <mark><strong>imports: [NewComponent]</strong></mark></li>
+                            <li>Ter importado no TypeScript as bibliotecas <u>ElementRef</u> e <u>ViewChild</u> sintaxe: <mark>{{NewComponent_ImportText}}</mark></li>
+                            <li>No TypeScript criar uma variavel com a seguinte sintaxe: <mark>{{NewComponent_CodigoTS}}</mark></li>
+                            <li>Referenciar o componente no HTML, sem isso não funciona <mark><strong>{{NewComponent_tagHTML}}</strong></mark></li>
+                        </ul>
+                        <p>Com isso é possível acessar não só o HTML do componente mas como as funções e propriedades/variaveis do arquivo typeScript</p>
+                        <p> Acessando NewComponent: <mark><strong>{{idadeAulaAnterior}}</strong></mark></p>
+                        <app-new-component/>
+
+                        <p class="card-text"> </p>
+                    </div>
+                    <div class="card-footer">
+                        <p>Caminho componente: <strong>{{CaminhoComponente}}</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
