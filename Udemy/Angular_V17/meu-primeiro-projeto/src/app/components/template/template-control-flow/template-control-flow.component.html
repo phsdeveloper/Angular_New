@@ -1,0 +1,120 @@
+<div class="accordion-item">
+    <h2 class="accordion-header" id="Secao07_aula_31_item">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#Secao07_aula_31_Body"
+            aria-expanded="true" aria-controls="Secao07_aula_31_Body">
+            {{'Aula 31. @IF'}}
+        </button>
+    </h2>
+    <div id="Secao07_aula_31_Body" class="accordion-collapse collapse show" aria-labelledby="Secao07_aula_31_item"
+        data-bs-parent="#Secao07_aulas">
+        <div class="accordion-body">
+            <div class="mt-2">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <strong> {{'@IF'}} </strong>
+                    </div>
+                    <div class="card-body">
+                        <button (click)="FUN_AlterarValorBooleno()" [ngClass]="{'btn-success btn':bl_isTrue}"
+                            *ngIf="bl_isTrue">
+                            {{bl_isTrue?'Valor verdadeiro':'Valor Falso'}}
+                        </button>
+                        <button (click)="FUN_AlterarValorBooleno()" [ngClass]="{'btn btn-danger':!bl_isTrue}"
+                            *ngIf="!bl_isTrue">
+                            {{bl_isTrue?'Valor verdadeiro':'Valor Falso'}}
+                        </button>
+                        <hr />
+
+                        <h5 class="card-title">Versão mais atual do Angular</h5>
+
+                        <p>Na versão mais nova do angula é necessário apenas colocar um <mark>{{'@if(Condicao booleana)
+                                { } @else { }'}}</mark>, bem parecido com MVC</p>
+                        @if (bl_isTrue) {
+                        <div class="alert alert-success" role="alert">
+                            O valor da variavel bl_isTrue = <strong>{{bl_isTrue}}</strong>
+                        </div>
+                        }
+                        @else {
+                        <div class="alert alert-danger" role="alert">
+                            O valor da variavel bl_isTrue = <strong>{{bl_isTrue}}</strong>
+                        </div>
+                        }
+
+                        <hr />
+
+
+                        <h5 class="card-title">Versão mais antiga do Angular</h5>
+                        <p> Nas versões mais antigas é necessário adicionar no elemento alvo a notação
+                            {{'*ngIf="Condicao Booleana"'}}, ou utilizar um <mark>ng-container</mark> com um <mark>ng-template</mark></p>
+                            <p>Como o código é extenso ver direto no HTML</p>
+                        <ng-container *ngIf="bl_isTrue; else isFalse">
+                            <div class="alert alert-success" role="alert" *ngIf="bl_isTrue">
+                                <p>Usando o ng-container</p>
+                                <p>O valor da variavel bl_isTrue = <strong>{{bl_isTrue}}</strong></p>
+                            </div>
+                        </ng-container>
+                        <ng-template #isFalse>
+
+                            <div class="alert alert-danger" role="alert" *ngIf="!bl_isTrue">
+                                <p>Usando o ng-template</p>
+                                <p>O valor da variavel bl_isTrue = <strong>{{bl_isTrue}}</strong></p>
+                            </div>
+                        </ng-template>
+                        <div class="alert alert-success" role="alert" *ngIf="bl_isTrue">
+                            <p>Direto no elemento HTML</p>
+                            O valor da variavel bl_isTrue = <strong>{{bl_isTrue}}</strong>
+                        </div>
+                        <div class="alert alert-danger" role="alert" *ngIf="!bl_isTrue">
+                            <p>Direto no elemento HTML</p>
+                            O valor da variavel bl_isTrue = <strong>{{bl_isTrue}}</strong>
+                        </div>
+
+                        <p class="card-text"> </p>
+                    </div>
+                    <div class="card-footer">
+                        <p>Caminho componente: <strong>{{CaminhoComponente}}</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!--
+    <div class="accordion-item">
+        <h2 class="accordion-header" id="Secao07_aula_XX_item">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse"
+                data-bs-target="#Secao07_aula_XX_Body" aria-expanded="true" aria-controls="Secao07_aula_XX_Body">
+                xxxxxxx
+            </button>
+        </h2>
+        <div id="Secao07_aula_XX_Body" class="accordion-collapse collapse show" aria-labelledby="Secao07_aula_XX_item"
+            data-bs-parent="#Secao07_aulas">
+            <div class="accordion-body">
+                <div class="mt-2">
+                    <div class="card">
+                        <div class="card-header text-center">
+                            <strong> XXXXXXXXX </strong>
+                        </div>
+                        <div class="card-body">
+
+                          
+
+                            <h5 class="card-title">xxxxxxxxxxxxx</h5>
+                            
+                           
+                            <hr/>
+                         
+
+                            <p class="card-text"> </p>
+                        </div>
+                        <div class="card-footer">
+                            <p>Caminho componente: <strong>{{CaminhoComponente}}</strong></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+-->
