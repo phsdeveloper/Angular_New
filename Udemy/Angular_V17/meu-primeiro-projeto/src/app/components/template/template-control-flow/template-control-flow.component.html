@@ -14,6 +14,11 @@
                         <strong> {{'@IF'}} </strong>
                     </div>
                     <div class="card-body">
+                        <button (click)="FUN_AlterarValorBooleno()" [ngClass]="{'btn-success btn_':bl_isTrue,'btn btn-danger':!bl_isTrue}">
+                            {{bl_isTrue?'Valor verdadeiro':'Valor Falso'}} botão com problema 
+                        </button>
+                        <br/>
+                        <br/>
                         <button (click)="FUN_AlterarValorBooleno()" [ngClass]="{'btn-success btn':bl_isTrue}"
                             *ngIf="bl_isTrue">
                             {{bl_isTrue?'Valor verdadeiro':'Valor Falso'}}
