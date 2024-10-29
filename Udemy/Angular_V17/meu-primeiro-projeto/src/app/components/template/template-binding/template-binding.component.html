@@ -335,6 +335,7 @@
                             <div class= "alert " [ngClass]="{'alert-danger': Aula28_Idade < 18,'alert-success': Aula28_Idade >= 18 }">
                                 {{Aula28_Idade >= 18?"Maior de idade":"menor de idade"}}
                             </div>
+                            
                             <p> para esse exemplo tentei utilizar as classes do bootstrap para fazer essa alteração, mas funcionou apenas para uma da situação e sempre a primeira</p>
                             <p>
                                 sintaxe: <strong>&#91;ngClass&#93;="&#123;'alert alert-danger': Aula28_Idade &lt; 18, 'alert alert-success': Aula28_Idade &gt;= 18&#125;"</strong>
