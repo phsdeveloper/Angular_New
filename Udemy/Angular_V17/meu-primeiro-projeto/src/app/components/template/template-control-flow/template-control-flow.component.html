@@ -14,19 +14,11 @@
                         <strong> {{'@IF'}} </strong>
                     </div>
                     <div class="card-body">
-                        <button (click)="FUN_AlterarValorBooleno()" [ngClass]="{'btn-success btn_':bl_isTrue,'btn btn-danger':!bl_isTrue}">
-                            {{bl_isTrue?'Valor verdadeiro':'Valor Falso'}} botão com problema 
+                        <button (click)="FUN_AlterarValorBooleno()" class = "btn "[ngClass]="{'btn-success':bl_isTrue,'btn-danger':!bl_isTrue}">
+                            {{bl_isTrue?'Valor verdadeiro':'Valor Falso'}} mó gambiarra para podermos fazer isso funcionar
                         </button>
-                        <br/>
-                        <br/>
-                        <button (click)="FUN_AlterarValorBooleno()" [ngClass]="{'btn-success btn':bl_isTrue}"
-                            *ngIf="bl_isTrue">
-                            {{bl_isTrue?'Valor verdadeiro':'Valor Falso'}}
-                        </button>
-                        <button (click)="FUN_AlterarValorBooleno()" [ngClass]="{'btn btn-danger':!bl_isTrue}"
-                            *ngIf="!bl_isTrue">
-                            {{bl_isTrue?'Valor verdadeiro':'Valor Falso'}}
-                        </button>
+                        
+                       
                         <hr />
 
                         <h5 class="card-title">Versão mais atual do Angular</h5>

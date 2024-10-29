@@ -332,7 +332,7 @@
 
                             <h5 class="card-title">Diretivas de atributo (ngClass)</h5>
                             
-                            <div [ngClass]="{'alert alert-danger': Aula28_Idade < 18,' alert alert-success': Aula28_Idade >= 18 }">
+                            <div class= "alert " [ngClass]="{'alert-danger': Aula28_Idade < 18,'alert-success': Aula28_Idade >= 18 }">
                                 {{Aula28_Idade >= 18?"Maior de idade":"menor de idade"}}
                             </div>
                             <p> para esse exemplo tentei utilizar as classes do bootstrap para fazer essa alteração, mas funcionou apenas para uma da situação e sempre a primeira</p>
