@@ -1,11 +1,11 @@
 <div class="accordion-item">
     <h2 class="accordion-header" id="Secao07_aula_31_item">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#Secao07_aula_31_Body"
-            aria-expanded="true" aria-controls="Secao07_aula_31_Body">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#Secao07_aula_31_Body" aria-expanded="true" aria-controls="Secao07_aula_31_Body">
             {{'Aula 31. @IF'}}
         </button>
     </h2>
-    <div id="Secao07_aula_31_Body" class="accordion-collapse collapse show" aria-labelledby="Secao07_aula_31_item"
+    <div id="Secao07_aula_31_Body" class="accordion-collapse collapse" aria-labelledby="Secao07_aula_31_item"
         data-bs-parent="#Secao07_aulas">
         <div class="accordion-body">
             <div class="mt-2">
@@ -14,11 +14,13 @@
                         <strong> {{'@IF'}} </strong>
                     </div>
                     <div class="card-body">
-                        <button (click)="FUN_AlterarValorBooleno()" class = "btn "[ngClass]="{'btn-success':bl_isTrue,'btn-danger':!bl_isTrue}">
-                            {{bl_isTrue?'Valor verdadeiro':'Valor Falso'}} mó gambiarra para podermos fazer isso funcionar
+                        <button (click)="FUN_AlterarValorBooleno()" class="btn "
+                            [ngClass]="{'btn-success':bl_isTrue,'btn-danger':!bl_isTrue}">
+                            {{bl_isTrue?'Valor verdadeiro':'Valor Falso'}} mó gambiarra para podermos fazer isso
+                            funcionar
                         </button>
-                        
-                       
+
+
                         <hr />
 
                         <h5 class="card-title">Versão mais atual do Angular</h5>
@@ -41,8 +43,10 @@
 
                         <h5 class="card-title">Versão mais antiga do Angular</h5>
                         <p> Nas versões mais antigas é necessário adicionar no elemento alvo a notação
-                            {{'*ngIf="Condicao Booleana"'}}, ou utilizar um <mark>ng-container</mark> com um <mark>ng-template</mark></p>
-                            <p>Como o código é extenso ver direto no HTML</p>
+                            {{'*ngIf="Condicao Booleana"'}}, ou utilizar um <mark>ng-container</mark> com um
+                            <mark>ng-template</mark>
+                        </p>
+                        <p>Como o código é extenso ver direto no HTML</p>
                         <ng-container *ngIf="bl_isTrue; else isFalse">
                             <div class="alert alert-success" role="alert" *ngIf="bl_isTrue">
                                 <p>Usando o ng-container</p>
@@ -75,6 +79,261 @@
         </div>
     </div>
 </div>
+
+<div class="accordion-item">
+    <h2 class="accordion-header" id="Secao07_aula_32_item">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#Secao07_aula_32_Body"
+            aria-expanded="true" aria-controls="Secao07_aula_32_Body">
+            {{'32. @For'}}
+        </button>
+    </h2>
+    <div id="Secao07_aula_32_Body" class="accordion-collapse collapse show" aria-labelledby="Secao07_aula_32_item"
+        data-bs-parent="#Secao07_aulas">
+        <div class="accordion-body">
+            <div class="mt-2">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <strong> {{'@for'}} </strong>
+                    </div>
+                    <div class="card-body">
+                        <div class="alert alert-warning" role="alert">
+                            Nessa aula foi apresentado alguns itens extra que acompanharam o for durante a aula:
+                            <table class="table table-bordered table-warning">
+                                <thead>
+                                    <tr class="text-center bg-warning">
+                                        <th>Código</th>
+                                        <th>Explicação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="bg-warning">
+                                        <td>{{aula32_Array}}</td>
+                                        <td>Gera os dado que serão carregados na tela com um delay</td>
+                                    </tr>
+
+                                </tbody>
+                            </table>
+
+                            <ul>
+                                <li>
+                                    <strong>public loadingData$: Observable&lt;string[]&gt;</strong>
+                                    <ul>
+                                        <li>Declara uma propriedade pública chamada <code>loadingData$</code> do tipo
+                                            <code>Observable</code> contendo um array de strings.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>= of(['item 1','item 2','item 3'])</strong>
+                                    <ul>
+                                        <li>Cria um Observable que emite um array de strings contendo
+                                            <code>['item 1','item 2','item 3']</code>.</li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <strong>.pipe(delay(3000))</strong>
+                                    <ul>
+                                        <li>Aplica um operador <code>pipe</code> ao Observable para adicionar um atraso
+                                            de 3000 milissegundos (3 segundos) antes de emitir os valores.</li>
+                                    </ul>
+                                </li>
+                            </ul>
+
+                        </div>
+
+
+
+                        <h5 class="card-title">forma Nova</h5>
+                        <p>Usando com um {{'@if'}} para poder verificar se o item já esta na tela, caso contrario vai
+                            exibir o carregando</p>
+                        <div>
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Linha</th>
+                                        <th>Código</th>
+                                        <th>Explicação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>{{'@if (loadingData$ | async; as data)'}}</td>
+                                        <td>Verifica se <code>loadingData$</code> está carregando. Se sim, armazena os
+                                            dados em <code>data</code>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>{{Aula32_teste}}</td>
+                                        <td>Exibe os dados carregados dentro de um parágrafo.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>{{'@for(item of data; track item)'}}</td>
+                                        <td>Itera sobre cada <code>item</code> em <code>data</code> e mantém o
+                                            rastreamento do item para otimização.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>{{Aula32_teste2}}</td>
+                                        <td>Exibe cada <code>item</code> dentro de uma lista não ordenada.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>{{'@else'}}</td>
+                                        <td>Parte do código que será executada se <code>loadingData$</code> não estiver
+                                            carregado.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>&lt;div class="spinner-border text-primary" role="status"&gt;&lt;/div&gt;
+                                        </td>
+                                        <td>Exibe um spinner de carregamento enquanto os dados estão sendo carregados.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>&lt;span class="sr-only"&gt;Carregando...&lt;/span&gt;</td>
+                                        <td>Texto acessível para leitores de tela indicando que o conteúdo está
+                                            carregando.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+
+                        </div>
+                        @if (loadingData$ | async; as data) {
+                        <p>{{data}}</p>
+                        @for(item of data; track item)
+                        {
+                        <li>{{item}}</li>
+                        }
+                        }
+                        @else
+                        {
+                        <div class="spinner-border text-primary" role="status"></div>
+                        <span class="sr-only">Carregando...</span>
+                        }
+
+                        <p>Sem o {{'IF'}} para poder validar se o item já carregou na tela </p>
+
+                        @for(item of loadingData$ | async; track item)
+                        {
+                        <li>{{item}}</li>
+                        }
+
+
+
+
+                        <hr />
+                        <h5 class="card-title">forma Antiga</h5>
+
+                        <ng-container *ngIf="loadingData$ | async as data; else loading">
+                            <p>{{data}}</p>
+
+                            <ul>
+                                <ng-container *ngFor="let item of data; trackBy: FUN_TrackByFn">
+                                    <li>{{item}}</li>
+                                </ng-container>
+                            </ul>
+                        </ng-container>
+                        <ng-template #loading>
+                            <div class="spinner-border text-success" role="status"></div>
+                            <span class="sr-only">Carregando Forma antiga</span>
+                        </ng-template>
+
+
+                        <div style="overflow: auto; width: 100%; height: 400px;">
+                            <table class="table table-bordered">
+                                <thead>
+                                    <tr>
+                                        <th>Linha</th>
+                                        <th>Código</th>
+                                        <th>Explicação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>{{aula32_FormaAntigaTrecho01}}</td>
+                                        <td>Verifica se <code>loadingData$</code> está carregando. Se sim, armazena os
+                                            dados em <code>data</code>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>{{Aula32_teste}}</td>
+                                        <td>Exibe os dados carregados dentro de um parágrafo.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>&lt;ul&gt;</td>
+                                        <td>Inicia uma lista não ordenada para exibir os itens.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>{{aula32_FormaAntigaTrecho02}}</td>
+                                        <td>Itera sobre cada <code>item</code> em <code>data</code>, rastreando por uma
+                                            função <code>trackBy</code> chamada <code>FUN_TrackByFn</code>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>{{Aula32_teste2}}</td>
+                                        <td>Exibe cada <code>item</code> dentro de um item de lista.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>{{el_SinalMenorBarra}}ng-container&gt; {{''}}</td>
+                                        <td>Fecha o <code>ng-container</code> de iteração.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>&lt;/ul&gt;</td>
+                                        <td>Fecha a lista não ordenada.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>&lt;/ng-container&gt;</td>
+                                        <td>Fecha o <code>ng-container</code> que verifica o carregamento de dados.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>&lt;ng-template #loading&gt;</td>
+                                        <td>Define um template de fallback que será exibido quando os dados estiverem
+                                            carregando.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>&lt;div class="spinner-border text-success" role="status"&gt;&lt;/div&gt;
+                                        </td>
+                                        <td>Exibe um spinner de carregamento enquanto os dados estão sendo carregados.
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>11</td>
+                                        <td>&lt;span class="sr-only"&gt;Carregando Forma antiga&lt;/span&gt;</td>
+                                        <td>Texto acessível para leitores de tela indicando que o conteúdo está
+                                            carregando.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>12</td>
+                                        <td>&lt;/ng-template&gt;</td>
+                                        <td>Fecha o <code>ng-template</code> do carregamento.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+
+
+
+                        <p class="card-text"> </p>
+                    </div>
+                    <div class="card-footer">
+                        <p>Caminho componente: <strong>{{CaminhoComponente}}</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 
 
 <!--
