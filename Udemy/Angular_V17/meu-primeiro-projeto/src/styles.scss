@@ -1,1 +1,13 @@
 /* You can add global styles to this file, and also import other style files */
+.table-wrapper {
+    display: block;
+    max-width: 100%;
+    overflow-x: auto;
+    white-space: nowrap;
+  }
+  
+  .table-scroll {
+    max-height: 400px;
+    overflow-y: auto;
+  }
+  

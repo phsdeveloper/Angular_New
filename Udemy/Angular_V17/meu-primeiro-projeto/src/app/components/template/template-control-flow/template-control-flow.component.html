@@ -82,12 +82,12 @@
 
 <div class="accordion-item">
     <h2 class="accordion-header" id="Secao07_aula_32_item">
-        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#Secao07_aula_32_Body"
-            aria-expanded="true" aria-controls="Secao07_aula_32_Body">
+        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse"
+            data-bs-target="#Secao07_aula_32_Body" aria-expanded="true" aria-controls="Secao07_aula_32_Body">
             {{'32. @For'}}
         </button>
     </h2>
-    <div id="Secao07_aula_32_Body" class="accordion-collapse collapse show" aria-labelledby="Secao07_aula_32_item"
+    <div id="Secao07_aula_32_Body" class="accordion-collapse collapse" aria-labelledby="Secao07_aula_32_item"
         data-bs-parent="#Secao07_aulas">
         <div class="accordion-body">
             <div class="mt-2">
@@ -119,14 +119,16 @@
                                     <strong>public loadingData$: Observable&lt;string[]&gt;</strong>
                                     <ul>
                                         <li>Declara uma propriedade pública chamada <code>loadingData$</code> do tipo
-                                            <code>Observable</code> contendo um array de strings.</li>
+                                            <code>Observable</code> contendo um array de strings.
+                                        </li>
                                     </ul>
                                 </li>
                                 <li>
                                     <strong>= of(['item 1','item 2','item 3'])</strong>
                                     <ul>
                                         <li>Cria um Observable que emite um array de strings contendo
-                                            <code>['item 1','item 2','item 3']</code>.</li>
+                                            <code>['item 1','item 2','item 3']</code>.
+                                        </li>
                                     </ul>
                                 </li>
                                 <li>
@@ -334,43 +336,332 @@
     </div>
 </div>
 
+<div class="accordion-item">
+    <h2 class="accordion-header" id="Secao07_aula_33_item">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#Secao07_aula_33_Body"
+            aria-expanded="true" aria-controls="Secao07_aula_33_Body">
+            {{'Aula 33. @For e seus valores'}}
+        </button>
+    </h2>
+    <div id="Secao07_aula_33_Body" class="accordion-collapse collapse show" aria-labelledby="Secao07_aula_33_item"
+        data-bs-parent="#Secao07_aulas">
+        <div class="accordion-body">
+            <div class="mt-2">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <strong> Dados que podemos extrair em um for de uma lista </strong>
+                    </div>
+                    <div class="card-body">
+                        <button class="btn btn-primary" (click)="FUN_VisualizarNovo()"
+                            type="button">{{aula33_bl_exibirExplicacaoNovo?'Ocultar explicacao novo':'Exibir explicacao
+                            Novo'}}</button>
+                            &nbsp;&nbsp;
+                        <button class="btn btn-primary" (click)="FUN_VisualizarAntigo()"
+                            type="button">{{aula33_bl_exibirExplicacaoAntigo?'Ocultar explicacao Antigo':'Exibir
+                            explicacao Antigo'}}</button>
+
+                            <p *ngIf="aula33_bl_exibirExplicacaoNovo || aula33_bl_exibirExplicacaoAntigo">Uma das maiores diferencas entre o Angular na versao antiga e da nova é usar $ antes das propriedades default</p>
+
+                        <div class="container mt-2" *ngIf="aula33_bl_exibirExplicacaoNovo">
+
+                            <p>Este exemplo mostra como usar a diretiva <code>*ngFor</code> do Angular para iterar sobre
+                                uma lista de itens. O trecho de código contém várias variáveis de contexto que fornecem
+                                informações sobre o loop.</p>
 
 
-<!--
-    <div class="accordion-item">
-        <h2 class="accordion-header" id="Secao07_aula_XX_item">
-            <button class="accordion-button" type="button" data-bs-toggle="collapse"
-                data-bs-target="#Secao07_aula_XX_Body" aria-expanded="true" aria-controls="Secao07_aula_XX_Body">
-                xxxxxxx
-            </button>
-        </h2>
-        <div id="Secao07_aula_XX_Body" class="accordion-collapse collapse show" aria-labelledby="Secao07_aula_XX_item"
-            data-bs-parent="#Secao07_aulas">
-            <div class="accordion-body">
-                <div class="mt-2">
-                    <div class="card">
-                        <div class="card-header text-center">
-                            <strong> XXXXXXXXX </strong>
+                            <pre>
+                                <code>
+                                    {{'@for (item of items; track item.name;'}}
+                                        let i = $index;
+                                        let c = $count;
+                                        let f = $first;
+                                        let l = $last;
+                                        let e = $even;
+                                        let o = $odd;
+                                </code>
+                            </pre>
+
+                            <h2>Explicação das Variáveis de Contexto</h2>
+                            <ul>
+                                <li><strong>item of items</strong>: Itera sobre a lista de itens.</li>
+                                <li><strong>track item.name</strong>: Usa a propriedade <code>name</code> de cada item
+                                    para otimizar o rastreamento de itens no loop.</li>
+                                <li><strong>let i = $index</strong>: Armazena o índice atual do loop na variável
+                                    <code>i</code>.
+                                </li>
+                                <li><strong>let c = $count</strong>: Armazena o número total de itens na variável
+                                    <code>c</code>.
+                                </li>
+                                <li><strong>let f = $first</strong>: Armazena um valor booleano que é <code>true</code>
+                                    se o item atual for o primeiro na lista.</li>
+                                <li><strong>let l = $last</strong>: Armazena um valor booleano que é <code>true</code>
+                                    se o item atual for o último na lista.</li>
+                                <li><strong>let e = $even</strong>: Armazena um valor booleano que é <code>true</code>
+                                    se o índice do item atual for par.</li>
+                                <li><strong>let o = $odd</strong>: Armazena um valor booleano que é <code>true</code> se
+                                    o índice do item atual for ímpar.</li>
+                            </ul>
+
+
+                            <h2>Uso em uma Página Angular</h2>
+                            <p>Você pode usar o <code>*ngFor</code> desta forma no template de um componente Angular:
+                            </p>
+                            <pre>
+                                <code>
+                                    <ul>
+                                        <li>{{aula33_Texto2}}</li>
+                                        <li>{{aula33_texto}}</li>
+                                    </ul>
+                                </code>
+                            </pre>
+
+                            <h2>Função trackByName</h2>
+                            <p>Para o trackBy funcionar, você precisa definir a função no seu componente:</p>
+                            <pre>
+                                <code>
+                                    {{'trackByName(index: number, item: any): string {'}}
+                                    return item.name;
+                                    {{'}'}}
+                                </code>
+                            </pre>
+
                         </div>
-                        <div class="card-body">
 
-                          
+                        <div class="container mt-2" *ngIf="aula33_bl_exibirExplicacaoAntigo">
+                            <table class="table table-bordered">
+                                <thead class="thead-dark">
+                                    <tr>
+                                        <th>Linha</th>
+                                        <th>Trecho de Código</th>
+                                        <th>Explicação</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>&lt;ng-container *<strong>ngFor</strong>=</td>
+                                        <td>Inicia a estrutura do <code>*ngFor</code> para iterar sobre os itens.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>2</td>
+                                        <td>let <strong>item</strong> of <strong>items</strong>;</td>
+                                        <td>Itera sobre a lista de <code>items</code>, atribuindo cada item à variável
+                                            <code>item</code>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>3</td>
+                                        <td>let <strong>i</strong> = <strong>index</strong>;</td>
+                                        <td>Armazena o índice atual do loop na variável <code>i</code>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>4</td>
+                                        <td>let <strong>c</strong> = <strong>count</strong>;</td>
+                                        <td>Armazena o número total de itens na variável <code>c</code>.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>let <strong>f</strong> = <strong>first</strong>;</td>
+                                        <td>Armazena um valor booleano que é <code>true</code> se o item atual for o
+                                            primeiro na lista.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>6</td>
+                                        <td>let <strong>l</strong> = <strong>last</strong>;</td>
+                                        <td>Armazena um valor booleano que é <code>true</code> se o item atual for o
+                                            último na lista.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>7</td>
+                                        <td>let <strong>e</strong> = <strong>even</strong>;</td>
+                                        <td>Armazena um valor booleano que é <code>true</code> se o índice do item atual
+                                            for par.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>8</td>
+                                        <td>let <strong>o</strong> = <strong>odd</strong>;</td>
+                                        <td>Armazena um valor booleano que é <code>true</code> se o índice do item atual
+                                            for ímpar.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>9</td>
+                                        <td>trackBy : <strong>trackByFN</strong></td>
+                                        <td>Utiliza a função <code>trackByFN</code> para rastrear itens por uma chave
+                                            única, melhorando o desempenho do loop.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>&gt;</td>
+                                        <td>Fecha a tag <code>ng-container</code>.</td>
+                                    </tr>
+                                </tbody>
+                            </table>
 
-                            <h5 class="card-title">xxxxxxxxxxxxx</h5>
-                            
-                           
-                            <hr/>
-                         
 
-                            <p class="card-text"> </p>
+
                         </div>
-                        <div class="card-footer">
-                            <p>Caminho componente: <strong>{{CaminhoComponente}}</strong></p>
+
+                       
+
+
+
+                        <hr />
+                        <div class="form-group">
+                            <label for="nome">Nome</label>
+                            <input #name type="text" class="form-control" id="nome" placeholder="Digite seu nome">
                         </div>
+                        <br>
+                        <button class="btn btn-primary" (click)="FUN_addNewName(name.value)">Adicionar</button>
+
+                        <br />
+                        <hr>
+
+
+
+                        <h6 class="card-title">Nova versao</h6>
+
+                        <div class="table-wrapper">
+                            <div class="table-scroll">
+                                <table class="table table-bordered">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col" class="text-center">Index</th>
+                                            <th scope="col" class="text-center">Count</th>
+                                            <th scope="col" class="text-center">First</th>
+                                            <th scope="col" class="text-center">Last</th>
+                                            <th scope="col" class="text-center">Even</th>
+                                            <th scope="col" class="text-center">Odd</th>
+                                            <th scope="col" class="text-center">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        @for (item of items; track item.name;
+                                        let i = $index;
+                                        let c = $count;
+                                        let f = $first;
+                                        let l = $last;
+                                        let e = $even;
+                                        let o = $odd;
+                                        ) {
+                                        <tr>
+                                            <td>{{ i }}</td>
+                                            <td>{{ c }}</td>
+                                            <td>{{ f }}</td>
+                                            <td>{{ l }}</td>
+                                            <td>{{ e }}</td>
+                                            <td>{{ o }}</td>
+                                            <td>{{ item.name }}</td>
+                                        </tr>
+                                        }
+
+
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+
+
+
+
+
+
+
+                        <hr />
+                        <h6 class="card-title">Versão Antiga</h6>
+
+                        <div class="table-wrapper">
+                            <div class="table-scroll">
+                                <table class="table table-bordered">
+                                    <thead class="thead-dark">
+                                        <tr>
+                                            <th scope="col" class="text-center">Index</th>
+                                            <th scope="col" class="text-center">Count</th>
+                                            <th scope="col" class="text-center">First</th>
+                                            <th scope="col" class="text-center">Last</th>
+                                            <th scope="col" class="text-center">Even</th>
+                                            <th scope="col" class="text-center">Odd</th>
+                                            <th scope="col" class="text-center">Value</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+
+                                        <ng-container *ngFor="
+                                        let item of items;
+                                        let i = index;
+                                        let c = count;
+                                        let f = first;
+                                        let l = last;
+                                        let e = even;
+                                        let o = odd;
+                                        trackBy : trackByFN
+                                        ">
+                                            <tr>
+                                                <td>{{ i }}</td>
+                                                <td>{{ c }}</td>
+                                                <td>{{ f }}</td>
+                                                <td>{{ l }}</td>
+                                                <td>{{ e }}</td>
+                                                <td>{{ o }}</td>
+                                                <td>{{ item.name }}</td>
+                                            </tr>
+                                        </ng-container>
+
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+
+
+                        <p class="card-text"> </p>
+                    </div>
+                    <div class="card-footer">
+                        <p>Caminho componente: <strong>{{CaminhoComponente}}</strong></p>
                     </div>
                 </div>
             </div>
         </div>
     </div>
+</div>
 
+
+
+
+<!--
+    <div class="accordion-item">
+    <h2 class="accordion-header" id="Secao07_aula_XX_item">
+        <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#Secao07_aula_XX_Body"
+            aria-expanded="true" aria-controls="Secao07_aula_XX_Body">
+            xxxxxxx
+        </button>
+    </h2>
+    <div id="Secao07_aula_XX_Body" class="accordion-collapse collapse show" aria-labelledby="Secao07_aula_XX_item"
+        data-bs-parent="#Secao07_aulas">
+        <div class="accordion-body">
+            <div class="mt-2">
+                <div class="card">
+                    <div class="card-header text-center">
+                        <strong> XXXXXXXXX </strong>
+                    </div>
+                    <div class="card-body">
+
+
+
+                        <h5 class="card-title">xxxxxxxxxxxxx</h5>
+
+
+                        <hr />
+
+
+                        <p class="card-text"> </p>
+                    </div>
+                    <div class="card-footer">
+                        <p>Caminho componente: <strong>{{CaminhoComponente}}</strong></p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>  
 -->
