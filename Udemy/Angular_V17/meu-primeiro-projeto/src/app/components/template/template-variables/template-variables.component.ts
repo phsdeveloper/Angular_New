@@ -1,4 +1,4 @@
-import { ElementRef, ViewChild, Component } from '@angular/core';
+import { ElementRef, ViewChild, Component,ChangeDetectorRef } from '@angular/core';
 import { NewComponent } from '../../new-component/new-component.component';
 
 
@@ -10,7 +10,7 @@ import { NewComponent } from '../../new-component/new-component.component';
   styleUrl: './template-variables.component.scss'
 })
 export class TemplateVariablesComponent {
-
+  constructor(private cdref: ChangeDetectorRef){}
   @ViewChild('name') public nameInput!: ElementRef;
   @ViewChild('h2') public h2!: ElementRef;
   @ViewChild(NewComponent) public childComponent!:NewComponent;
@@ -30,6 +30,8 @@ public idadeAulaAnterior = '';
     this.h2_InnerText = this.h2.nativeElement.innerText + ' - Vindo do typeScript';
     this.h2_DataCodigo = this.h2.nativeElement.getAttribute('data-Codigo') + ' - Vindo do typeScript';
    this.idadeAulaAnterior = this.childComponent.Titulo + ' ->> vindo do typeScript dessa aula';
+   //Correção do erro ao inspecionar relatado na aula 29: Error: NG0100: ExpressionChangedAfterItHasBeenCheckedError
+   this.cdref.detectChanges();
    
   }
 
